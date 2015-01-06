@@ -6,7 +6,7 @@
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 @ECHO off
 ::Set background color to black so text displays as we expect.
-Title OCHIN Network Diagnostics
+Title Network Diagnostics
 @(color 00)
 SETLOCAL DISABLEDELAYEDEXPANSION
 SET q=^"
