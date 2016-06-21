@@ -27,13 +27,20 @@ FOR /F "tokens=* USEBACKQ" %%F IN (`ping %DefaultGateway%`) DO (
 CALL :c 0F "%var0%" /n
 CALL :c 0B "%var1%" /n
 CALL :c 0B "%var2%" /n
-CALL :c 0B "%var3%" /n 
+CALL :c 0B "%var3%" /n
 CALL :c 0B "%var4%" /n
 CALL :c 0F "%var5%" /n
 CALL :c 0B "%var6%" /n
 CALL :c 0F "%var7%" /n
 CALL :c 0B "%var8%" /n
 ECHO.
+
+cd %userprofile%\desktop
+ECHO Running traceroute, please wait
+>output.txt (
+  ipconfig /all
+  tracert 8.8.8.8
+)
 
 ::Resolve your.own.tld
 ECHO Testing DNS resolution of your.own.tld
@@ -72,7 +79,7 @@ FOR /F "tokens=* USEBACKQ" %%F IN (`ping -n 4 -a 192.0.2.2`) DO (
 CALL :c 0F "%var17%" /n
 CALL :c 0B "%var18%" /n
 CALL :c 0B "%var19%" /n
-CALL :c 0B "%var20%" /n 
+CALL :c 0B "%var20%" /n
 CALL :c 0B "%var21%" /n
 CALL :c 0F "%var22%" /n
 CALL :c 0B "%var23%" /n
@@ -91,7 +98,7 @@ FOR /F "tokens=* USEBACKQ" %%F IN (`ping -n 4 -a 8.8.8.8`) DO (
 CALL :c 0F "%var26%" /n
 CALL :c 0B "%var27%" /n
 CALL :c 0B "%var28%" /n
-CALL :c 0B "%var29%" /n 
+CALL :c 0B "%var29%" /n
 CALL :c 0B "%var30%" /n
 CALL :c 0F "%var31%" /n
 CALL :c 0B "%var32%" /n
@@ -110,7 +117,7 @@ FOR /F "tokens=* USEBACKQ" %%F IN (`ping -n 4 -a www.pool.ntp.org`) DO (
 CALL :c 0F "%var35%" /n
 CALL :c 0B "%var36%" /n
 CALL :c 0B "%var37%" /n
-CALL :c 0B "%var38%" /n 
+CALL :c 0B "%var38%" /n
 CALL :c 0B "%var39%" /n
 CALL :c 0F "%var40%" /n
 CALL :c 0B "%var41%" /n
