@@ -14,6 +14,13 @@ ECHO(
 ECHO(
 SETLOCAL ENABLEDELAYEDEXPANSION
 
+cd %userprofile%\desktop
+ECHO Running traceroute, please wait
+>output.txt (
+  ipconfig /all
+  tracert 8.8.8.8
+)
+
 ::Use findstr to grab the default gateway from route.exe output
 ECHO Testing connectivity to your local default gateway
 @For /f "tokens=3" %%* in (
@@ -34,13 +41,6 @@ CALL :c 0B "%var6%" /n
 CALL :c 0F "%var7%" /n
 CALL :c 0B "%var8%" /n
 ECHO.
-
-cd %userprofile%\desktop
-ECHO Running traceroute, please wait
->output.txt (
-  ipconfig /all
-  tracert 8.8.8.8
-)
 
 ::Resolve your.own.tld
 ECHO Testing DNS resolution of your.own.tld
